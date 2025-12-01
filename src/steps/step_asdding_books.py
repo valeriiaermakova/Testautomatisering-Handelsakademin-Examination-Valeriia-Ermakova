@@ -18,28 +18,35 @@ def step_given_start_page(context):
 def title_is_empty(context):
     locator = context.web_page.get_title_input()
     expect(locator).to_be_empty()
+    expect(locator).to_be_visible()
 
 
 @then("jag ser tom författare form")
 def author_is_empty(context):
     locator = context.web_page.get_author_input()
     expect(locator).to_be_empty()
+    expect(locator).to_be_visible()
 
 
 @then("jag ser gråtonad knappen")
 def button_to_add_book_disabled(context):
     locator = context.web_page.get_submit_button()
     expect(locator).to_be_disabled()
+    expect(locator).to_be_visible()
 
 
 @when("jag skriver titel")
 def add_value_to_title_field(context):
     context_go_to_add_book_page(context)
+    locator = context.web_page.get_title_input()
+    expect(locator).to_be_editable()
     context.web_page.set_title("En man som heter Ove")
 
 
 @when("jag skriver författare")
 def add_value_to_author_field(context):
+    locator = context.web_page.get_author_input()
+    expect(locator).to_be_editable()
     context.web_page.set_author("F. Backmann")
 
 

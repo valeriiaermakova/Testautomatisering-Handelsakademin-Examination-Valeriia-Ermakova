@@ -16,17 +16,17 @@ Feature: Lägg till en ny bok
         And "Lägg till ny bok" knappen är gråtonad
 
     Scenario: Visa läggad bok i Katalog
-        When jag går till Katalog sidan
+        When jag har lagt en ny bok
+        And jag går till Katalog sidan
         Then jag kan se boken som jag har lagt till
 
     Scenario Outline: Försöka att lägga en bok utan fullständiga uppgifter
-        When jag läggar eller skippar <title>
-        And jag läggar eller skippar <author>
-        Then "Lägg till ny bok" knappen är gråtonad
-        And jag kan inte lägga till boken utan fullständiga uppgifter
+        When jag läggar eller skippar titel: <title>
+        And jag läggar eller skippar författare: <author>
+        Then "Lägg till ny bok" knappen är inaktiverad
 
         Examples:
             | title | author |
-            |       |        |
-            | Title |        |
-            |       | Author |
+            | ""    | ""     |
+            | Title | ""     |
+            | ""    | Author |

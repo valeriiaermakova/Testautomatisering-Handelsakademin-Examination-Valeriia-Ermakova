@@ -8,7 +8,7 @@ class CatalogPage:
     def navigate(self):
         base_url.get_to_base_url(self.page)
 
-    def mark_book_as_favorite(self, bookTestId):
+    def click_on_favorite_icon(self, bookTestId):
         self.page.get_by_test_id(bookTestId).click()
 
     def get_book_by_test_id(self, bookTestId):

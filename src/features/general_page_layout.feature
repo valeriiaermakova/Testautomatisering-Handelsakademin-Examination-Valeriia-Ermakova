@@ -1,0 +1,12 @@
+Feature: Webbsida vy
+
+    Scenario: Main header
+        When jag är på Läslistan webbsida
+        Then jag ser text "Läslistan"
+        And jag ser an bild
+
+    Scenario: webbsida titel vy
+        When jag är på Läslista webbsida
+        Then jag ser text Läslistan son sidas titel
+        And sidas titel har ikon
+

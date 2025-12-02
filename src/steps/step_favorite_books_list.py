@@ -1,4 +1,4 @@
-from behave import given, when, then
+from behave import when, then
 from playwright.sync_api import expect
 from pages.catalog_page import CatalogPage
 from pages.my_books_page import MyBooksPage

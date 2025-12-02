@@ -9,4 +9,4 @@
 - [Som en användare vill jag kunna lägga till böcker (titel och författare) i Katalog från separat sida "Lägg till bok" så att jag kan fylla på Katalogen.](src/features/adding_books.feature)
 - [Som en användare vill jag lägga till en bok bara när jag skrev både titel och författare så att jag kan ha fullständig information i Katalogen.](src/features/adding_books.feature)
 - [Som en användare vill jag landa på Katalog sida och växla mellan Katalog, Lägg till bok och Mina bocker sidor så att jag kan navigera hur jag vill på webbplatsen.](src/features/navigation.feature)
-- [Som en användare vill jag se text "Läslistan" och bok-ikon vid sidans titel högst upp i webbläsarfönstret så att jag kan skilja webbplatsen från andra flikar i webbläsaren.](src/features/general_page_layout.feature)
+- [Som en användare vill jag se text "Läslistan" vid sidans titel högst upp i webbläsarfönstret så att jag kan skilja webbplatsen från andra flikar i webbläsaren.](src/features/general_page_layout.feature)

@@ -1,6 +1,6 @@
 Feature: Hantera märkta böcker
 
-    Scenario:  Märka flera favorita böcker i Katalog
+    Scenario: Märka flera favorita böcker i Katalog
         When jag tryck på en favorit ikon nära en marklös bok
         Then bok blir märkt
         And jag tryck på favorit ikon nära andra marklös bok

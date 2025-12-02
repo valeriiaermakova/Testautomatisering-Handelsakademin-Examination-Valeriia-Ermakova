@@ -6,5 +6,5 @@ class MyBooksPage:
         self.page = page
 
     def navigate(self):
-        base_url.get_to_base_url()
+        base_url.get_to_base_url(self.page)
         self.page.get_by_test_id("favorites").click()

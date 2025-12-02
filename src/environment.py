@@ -5,7 +5,7 @@ def before_all(context):
     print("Start Test Suite")
     context.playwright = sync_playwright().start()
     context.browser_type = context.playwright.chromium
-    context.browser = context.browser_type.launch(headless=False)
+    context.browser = context.browser_type.launch(headless=True)
 
 
 def before_scenario(context, scenario):

@@ -10,6 +10,7 @@ def context_go_to_catalog_page(context):
     context.web_page = web_page
 
 
+# Scenario Outline: Märka flera favorita böcker i Katalog
 @when("jag tryck på en favorit ikon nära en marklös bok {book1}")
 def mark_book(context, book1):
     context_go_to_catalog_page(context)
@@ -43,6 +44,7 @@ def another_book_is_marked(context, book2):
     check_book_is_marked(context, book2)
 
 
+# Scenario Outline: Ta bort en favoritmarkering i Katalog
 @when("jag tryck på favorit ikon nära en märkt bok {bookToUnmark}")
 def unmark_book(context, bookToUnmark):
     context_go_to_catalog_page(context)
@@ -60,6 +62,7 @@ def book_is_unmarked(context, bookToUnmark):
     expect(locator).to_be_visible()
 
 
+# Scenario Outline: Märka en bok igen efter avmarkering
 @when("jag tryck på en favorit ikon nära en märkt bok {bookToReMark}")
 def unmark_book2(context, bookToReMark):
     context_go_to_catalog_page(context)
@@ -83,6 +86,7 @@ def book_is_marked_repeatedly(context, bookToReMark):
     check_book_is_marked(context, bookToReMark)
 
 
+# Scenario: Kolla upp tom sida "Mina böcker"
 @when('jag kollar upp "Mina böcker" sida innan jag lägger till böcker i lista')
 def go_to_my_books(context):
     context_go_to_catalog_page(context)
@@ -97,6 +101,7 @@ def check_empty_my_books_list(context):
     ).to_be_visible()
 
 
+# Scenario Outline: Favorit-märkta böcker visas i Mina böcker lista
 @when("jag tryck på favorit ikon nära en marklös bok {book}")
 def mark_favorite_book(context, book):
     mark_book(context, book)

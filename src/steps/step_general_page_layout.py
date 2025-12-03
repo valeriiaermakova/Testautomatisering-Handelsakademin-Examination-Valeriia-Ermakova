@@ -11,6 +11,7 @@ def context_go_to_catalog_page(context):
     context.web_page = web_page
 
 
+# Scenario: Check Main header
 @when("jag är på Läslistan webbsida")
 def go_to_main_page(context):
     context_go_to_catalog_page(context)
@@ -30,6 +31,7 @@ def image_is_visible(context):
     expect(locator).to_have_accessible_name("Bokklubb på café")
 
 
+# Scenario: Check webbsida titel vy
 @when("jag är på Läslista webbsida")
 def go_to_main_page2(context):
     context_go_to_catalog_page(context)

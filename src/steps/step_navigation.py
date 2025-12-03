@@ -11,6 +11,7 @@ def context_go_to_catalog_page(context):
     context.web_page = web_page
 
 
+# Scenario: Landning på huvudsida
 @when("jag öppnar Läslista webbsida")
 def go_to_main_page(context):
     context_go_to_catalog_page(context)
@@ -24,6 +25,7 @@ def check_catalog_view(context):
     expect(context.page.locator("div.app > main > div.catalog")).to_be_visible()
 
 
+# Scenario: Navigering till "Lägg till bok" vy
 @when('jag trick på "Lägg till bok"')
 def go_to_add_books_page(context):
     context_go_to_catalog_page(context)
@@ -38,6 +40,7 @@ def check_add_book_view(context):
     expect(context.page.locator("div.app > main > div.form")).to_be_visible()
 
 
+# Scenario: Navigering till "Mina böcker" vy
 @when('jag trick på "Mina böcker"')
 def go_to_my_books_page(context):
     context_go_to_catalog_page(context)
@@ -52,6 +55,7 @@ def check_my_books_view(context):
     expect(context.page.locator("div.app > main > div.favorites")).to_be_visible()
 
 
+# Scenario: Navigering tillbaka till "Katalog" vy
 @when('jag är på "Mina böcker" vy')
 def go_to_my_books_page(context):
     context_go_to_catalog_page(context)

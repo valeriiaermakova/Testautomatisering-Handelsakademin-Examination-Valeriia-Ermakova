@@ -1,11 +1,13 @@
+import re
+
 import base_url
 
 
 class MyBooksPage:
     def __init__(self, page):
         self.page = page
-        self.expected_text_for_empty_list = (
-            " När du valt, kommer dina favoritböcker att visas här. "
+        self.expected_text_for_empty_list = re.compile(
+            r"\s*När du valt, kommer dina favoritböcker att visas här.\s*"
         )
 
     def navigate(self):

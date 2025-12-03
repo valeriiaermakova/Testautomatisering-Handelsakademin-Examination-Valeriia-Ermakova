@@ -1,4 +1,4 @@
-from behave import given, when, then
+from behave import when, then
 from playwright.sync_api import expect
 from pages.catalog_page import CatalogPage
 
@@ -9,6 +9,7 @@ def context_go_to_catalog_page(context):
     context.web_page = web_page
 
 
+# Scenario:  Titta igenom böcker i Katalog
 @when("jag är på Katalog sida")
 def go_to_katalog(context):
     context_go_to_catalog_page(context)

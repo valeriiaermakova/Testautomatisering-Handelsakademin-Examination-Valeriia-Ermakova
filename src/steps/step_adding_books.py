@@ -1,4 +1,4 @@
-from behave import given, when, then
+from behave import when, then
 from playwright.sync_api import expect
 from pages.add_new_book_page import AddNewBookPage
 
@@ -9,6 +9,7 @@ def context_go_to_add_book_page(context):
     context.web_page = web_page
 
 
+# Scenario: Former på "Lägg till bok" sidan är tomta
 @when('jag tryck på "Lägg till bok" knappen i navigering menu')
 def step_given_start_page(context):
     context_go_to_add_book_page(context)
@@ -35,6 +36,7 @@ def button_to_add_book_disabled(context):
     expect(locator).to_be_visible()
 
 
+# Scenario: Lägga till en bok
 @when("jag skriver titel")
 def add_value_to_title_field(context):
     context_go_to_add_book_page(context)
@@ -76,9 +78,9 @@ def button_disabled_after_submit(context):
     button_to_add_book_disabled(context)
 
 
+# Scenario: Visa läggad bok i Katalog
 @when("jag har lagt en ny bok")
 def add_new_book(context):
-    # raise ValueError("hug!")
     context_go_to_add_book_page(context)
     context.web_page.set_title("En man som heter Ove")
     context.web_page.set_author("F. Backmann")
@@ -105,6 +107,7 @@ def find_added_book(context):
     assert book_found
 
 
+# Scenario Outline: Försöka att lägga en bok utan fullständiga uppgifter
 @when("jag läggar eller skippar titel: {title}")
 def add_title(context, title):
     context_go_to_add_book_page(context)
